@@ -1,0 +1,19 @@
+{
+    "name": "vikoff/uz-monitor",
+    "type": "project",
+    "require": {
+        "psr/log": "^1.0"
+    },
+    "authors": [
+        {
+            "name": "Yuriy Novikov",
+            "email": "yurijnovikov@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\": "."
+        }
+    },
+    "minimum-stability": "stable"
+}
