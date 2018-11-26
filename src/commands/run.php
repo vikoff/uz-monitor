@@ -6,7 +6,7 @@ use app\components\UzMonitor\UzApiAdapter;
 use app\components\UzMonitor\UzMonitor;
 use app\models\Stations;
 
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../../vendor/autoload.php';
 
 $testRun = true;
 

@@ -1,0 +1,5 @@
+parameters:
+
+  telegram_api.bot_id: ''
+  telegram_api.bot_sercret: ''
+
