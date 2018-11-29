@@ -1,0 +1,16 @@
+services:
+
+  logger:
+    class: app\components\log\CliLogger
+
+  commands.broker:
+    class: app\components\framework\CommandsBroker
+    calls:
+      - ["addCommand", ["@command.uz.check_places"]]
+      - ["addCommand", ["@command.uz.start_monitoring"]]
+
+  command.uz.check_places:
+    class: app\commands\Uz\CheckPlaces
+
+  command.uz.start_monitoring:
+    class: app\commands\Uz\StartMonitoring

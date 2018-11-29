@@ -5,7 +5,8 @@
         "psr/log": "^1.0",
         "symfony/dependency-injection": "^4.1",
         "symfony/config": "^4.1",
-        "symfony/yaml": "^4.1"
+        "symfony/yaml": "^4.1",
+        "symfony/console": "^4.1"
     },
     "authors": [
         {

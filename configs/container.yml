@@ -1,4 +1,0 @@
-services:
-
-  logger:
-    class: app\components\log\CliLogger
