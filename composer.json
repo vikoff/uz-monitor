@@ -6,7 +6,9 @@
         "symfony/dependency-injection": "^4.1",
         "symfony/config": "^4.1",
         "symfony/yaml": "^4.1",
-        "symfony/console": "^4.1"
+        "symfony/console": "^4.1",
+        "ext-json": "*",
+        "ext-curl": "*"
     },
     "authors": [
         {

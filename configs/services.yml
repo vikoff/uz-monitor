@@ -3,14 +3,67 @@ services:
   logger:
     class: app\components\log\CliLogger
 
-  commands.broker:
-    class: app\components\framework\CommandsBroker
-    calls:
-      - ["addCommand", ["@command.uz.check_places"]]
-      - ["addCommand", ["@command.uz.start_monitoring"]]
+  monitor.daemon:
+    class: App\Module\Uz\Component\MonitorDaemon
+    arguments:
+      - @monitor.component
+      - %monitor.daemon.sleep%
+      - @logger
 
-  command.uz.check_places:
-    class: app\commands\Uz\CheckPlaces
+  monitor.component:
+    class: App\Module\Uz\Component\MonitorComponent
+    arguments:
+      - @new_places.component
+      - @notification.component
+      - @uz.request.factory
+      - @task.fs.repository
+      - @uz.response.repository
+      - @uz.api
+      - %monitor.default_check_interval%
+      - @logger
 
-  command.uz.start_monitoring:
-    class: app\commands\Uz\StartMonitoring
+  new_places.component:
+    class: App\Module\Uz\Component\NewPlacesComponent
+
+  notification.component:
+    class: App\Module\Uz\Component\NotificationComponent
+    arguments:
+      -
+        - @notifier.telegram
+        - @notifier.unix_baloon
+      - @logger
+
+  notifier.telegram:
+    class: App\Module\Uz\Component\Notifier\TelegramNotifier
+    arguments: [%telegram_api.bot_id%, %telegram_api.bot_sercret%]
+
+  notifier.unix_baloon:
+    class: App\Module\Uz\Component\Notifier\UnixBaloonNotifier
+
+  uz.request.factory:
+    class: App\Module\Uz\Factory\UzRequestFactory
+
+  uz.response.repository:
+    class: App\Module\Uz\Dao\UzResponseFsRepository
+    arguments:
+      - @file_system
+      - @uz.response.mapper
+
+  uz.response.mapper:
+    class: App\Module\Uz\Mapper\UzResponseJsonMapper
+
+  uz.api:
+    class: App\Module\Uz\Component\UzApi
+
+  task.fs.repository:
+    class: App\Module\Uz\Dao\TaskFsRepository
+    arguments:
+      - @file_system
+      - @task.json.mapper
+
+  task.json.mapper:
+    class: App\Module\Uz\Mapper\TaskJsonMapper
+
+  file_system:
+    class: App\Lib\Utils\FileSystem
+    arguments: [%file_system.db_dir%]

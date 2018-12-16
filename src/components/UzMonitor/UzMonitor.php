@@ -2,13 +2,13 @@
 
 namespace app\components\UzMonitor;
 
-use app\components\log\OptionalLoggerTrait;
+use app\components\log\LoggerOptionalTrait;
 use app\components\UzMonitor\Notifier\NotifierInterface;
 use Psr\Log\LoggerInterface;
 
 class UzMonitor
 {
-    use OptionalLoggerTrait;
+    use LoggerOptionalTrait;
 
     /**
      * @var UzApiAdapter

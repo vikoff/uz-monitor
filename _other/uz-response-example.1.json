@@ -1,0 +1,209 @@
+{
+    "data": {
+        "list": [
+            {
+                "num": "002Д",
+                "category": 0,
+                "isTransformer": 0,
+                "travelTime": "9:08",
+                "from": {
+                    "code": "2200001",
+                    "station": "Киев-Пассажирский",
+                    "stationTrain": "Константиновка",
+                    "date": "пятница, 14.09.2018",
+                    "time": "04:00",
+                    "sortTime": 1536886800,
+                    "srcDate": "2018-09-14"
+                },
+                "to": {
+                    "code": "2218200",
+                    "station": "Ивано-Франковск",
+                    "stationTrain": "Ивано-Франковск",
+                    "date": "пятница, 14.09.2018",
+                    "time": "13:08",
+                    "sortTime": 1536919680
+                },
+                "types": [
+                    {
+                        "id": "Л",
+                        "title": "Люкс",
+                        "letter": "Л",
+                        "places": 8
+                    },
+                    {
+                        "id": "К",
+                        "title": "Купе",
+                        "letter": "К",
+                        "places": 1
+                    }
+                ],
+                "child": {
+                    "minDate": "2004-09-15",
+                    "maxDate": "2018-09-06"
+                },
+                "allowStudent": 1,
+                "allowBooking": 1,
+                "isCis": 0,
+                "isEurope": 0,
+                "allowPrivilege": 0,
+                "disabledPrivilegeByDate": 0
+            },
+            {
+                "num": "749К",
+                "category": 2,
+                "isTransformer": 1,
+                "travelTime": "8:03",
+                "from": {
+                    "code": "2200001",
+                    "station": "Киев-Пассажирский",
+                    "stationTrain": "Киев-Пассажирский",
+                    "date": "пятница, 14.09.2018",
+                    "time": "14:07",
+                    "sortTime": 1536923220,
+                    "srcDate": "2018-09-14"
+                },
+                "to": {
+                    "code": "2218200",
+                    "station": "Ивано-Франковск",
+                    "stationTrain": "Ивано-Франковск",
+                    "date": "пятница, 14.09.2018",
+                    "time": "22:10",
+                    "sortTime": 1536952200
+                },
+                "types": [
+                    {
+                        "id": "С1",
+                        "title": "Сидячий первого класса",
+                        "letter": "С1",
+                        "places": 30
+                    },
+                    {
+                        "id": "С2",
+                        "title": "Сидячий второго класса",
+                        "letter": "С2",
+                        "places": 62
+                    }
+                ],
+                "child": {
+                    "minDate": "2004-09-15",
+                    "maxDate": "2018-09-06"
+                },
+                "allowStudent": 1,
+                "allowBooking": 1,
+                "isCis": 0,
+                "isEurope": 0,
+                "allowPrivilege": 0,
+                "disabledPrivilegeByDate": 0
+            },
+            {
+                "num": "043К",
+                "category": 0,
+                "isTransformer": 0,
+                "travelTime": "10:53",
+                "from": {
+                    "code": "2200001",
+                    "station": "Киев-Пассажирский",
+                    "stationTrain": "Киев-Пассажирский",
+                    "date": "пятница, 14.09.2018",
+                    "time": "18:50",
+                    "sortTime": 1536940200,
+                    "srcDate": "2018-09-14"
+                },
+                "to": {
+                    "code": "2218200",
+                    "station": "Ивано-Франковск",
+                    "stationTrain": "Ивано-Франковск",
+                    "date": "суббота, 15.09.2018",
+                    "time": "05:43",
+                    "sortTime": 1536979380
+                },
+                "types": [],
+                "child": {
+                    "minDate": "2004-09-15",
+                    "maxDate": "2018-09-06"
+                },
+                "allowStudent": 1,
+                "allowBooking": 1,
+                "isCis": 0,
+                "isEurope": 0,
+                "allowPrivilege": 0,
+                "disabledPrivilegeByDate": 0
+            },
+            {
+                "num": "144О",
+                "category": 0,
+                "isTransformer": 0,
+                "travelTime": "11:01",
+                "from": {
+                    "code": "2200001",
+                    "station": "Киев-Пассажирский",
+                    "stationTrain": "Кременчуг",
+                    "date": "пятница, 14.09.2018",
+                    "time": "20:19",
+                    "sortTime": 1536945540,
+                    "srcDate": "2018-09-14"
+                },
+                "to": {
+                    "code": "2218200",
+                    "station": "Ивано-Франковск",
+                    "stationTrain": "Ворохта",
+                    "date": "суббота, 15.09.2018",
+                    "time": "07:20",
+                    "sortTime": 1536985200
+                },
+                "types": [],
+                "child": {
+                    "minDate": "2004-09-15",
+                    "maxDate": "2018-09-06"
+                },
+                "allowStudent": 1,
+                "allowBooking": 1,
+                "isCis": 0,
+                "isEurope": 0,
+                "allowPrivilege": 0,
+                "disabledPrivilegeByDate": 0
+            },
+            {
+                "num": "007К",
+                "category": 0,
+                "isTransformer": 1,
+                "travelTime": "9:33",
+                "from": {
+                    "code": "2200001",
+                    "station": "Киев-Пассажирский",
+                    "stationTrain": "Киев-Пассажирский",
+                    "date": "пятница, 14.09.2018",
+                    "time": "22:27",
+                    "sortTime": 1536953220,
+                    "srcDate": "2018-09-14"
+                },
+                "to": {
+                    "code": "2218200",
+                    "station": "Ивано-Франковск",
+                    "stationTrain": "Ивано-Франковск",
+                    "date": "суббота, 15.09.2018",
+                    "time": "08:00",
+                    "sortTime": 1536987600
+                },
+                "types": [
+                    {
+                        "id": "Л",
+                        "title": "Люкс",
+                        "letter": "Л",
+                        "places": 2
+                    }
+                ],
+                "child": {
+                    "minDate": "2004-09-15",
+                    "maxDate": "2018-09-06"
+                },
+                "allowStudent": 1,
+                "allowBooking": 1,
+                "isCis": 0,
+                "isEurope": 0,
+                "allowPrivilege": 0,
+                "disabledPrivilegeByDate": 0
+            }
+        ]
+    }
+}

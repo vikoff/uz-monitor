@@ -60,6 +60,7 @@ class ConsoleApplication extends Application
             new FileLocator(__DIR__ . '/../../../configs/')
         );
         $loader->load('services.yml');
+        $loader->load('commands.yml');
         $loader->load('options.yml');
         $loader->load('options.custom.yml');
 

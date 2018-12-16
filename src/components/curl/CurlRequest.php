@@ -2,6 +2,8 @@
 
 namespace app\components\curl;
 
+use App\components\curl\Exception\CurlResponseException;
+
 class CurlRequest
 {
     const RESPONSE_DEFAULT = 'default';
@@ -14,6 +16,8 @@ class CurlRequest
 	private $requestBody;
 	private $requestMethod = 'GET';
 	private $headers = [];
+	private $allowOnly2xx = false;
+
     /**
      * @var string
      */
@@ -144,6 +148,12 @@ class CurlRequest
         return $this;
 	}
 
+    public function allowOnly2xx()
+    {
+        $this->allowOnly2xx = true;
+        return $this;
+	}
+
     /**
      * @return CurlResponse
      * @throws \Exception
@@ -167,9 +177,17 @@ class CurlRequest
 			list($headers, $body) = explode("\r\n\r\n", $response, 2) + ['', ''];
 		}
 
+        if ($this->allowOnly2xx && "{$info['http_code']}"[0] !== 2) {
+            throw new CurlResponseException(
+                $this->buildDefaultResponse($body, $headers),
+                'Unexpected http code ' . $info['http_code'],
+                (int)$info['http_code']
+            );
+        }
+
 		switch ($this->responseFormat) {
             case self::RESPONSE_DEFAULT:
-                return new CurlResponse($this->curl, $body, $headers, $this->requestMethod, $this->requestBody);
+                return $this->buildDefaultResponse($body, $headers);
 
             case self::RESPONSE_JSON:
                 return new CurlResponseJson($this->curl, $body, $headers, $this->requestMethod, $this->requestBody);
@@ -177,5 +195,10 @@ class CurlRequest
             default:
                 throw new \Exception("invalid expected response format $this->responseFormat");
         }
+	}
+
+    public function buildDefaultResponse($body, $headers)
+    {
+        return new CurlResponse($this->curl, $body, $headers, $this->requestMethod, $this->requestBody);
 	}
 }

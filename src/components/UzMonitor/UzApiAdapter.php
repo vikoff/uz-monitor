@@ -2,13 +2,13 @@
 
 namespace app\components\UzMonitor;
 
-use app\components\log\OptionalLoggerTrait;
+use app\components\log\LoggerOptionalTrait;
 use app\components\curl\CurlRequest;
 use Psr\Log\LoggerInterface;
 
 class UzApiAdapter
 {
-    use OptionalLoggerTrait;
+    use LoggerOptionalTrait;
 
     /**
      * @var string
@@ -129,6 +129,7 @@ class UzApiAdapter
                 'date' => $this->date,
                 'time' => $this->time,
             ])
+            ->allowOnly2xx()
             ->exec();
 
         if ($response->getHttpCode() !== 200) {

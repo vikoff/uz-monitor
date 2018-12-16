@@ -6,3 +6,8 @@ parameters:
   telegram_api.bot_id: ''
   telegram_api.bot_sercret: ''
 
+  monitor.daemon.sleep: 60 # sec
+  monitor.default_check_interval: 60 # sec
+
+  file_system.db_dir: var/fs-db
+

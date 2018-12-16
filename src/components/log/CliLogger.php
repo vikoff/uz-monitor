@@ -15,7 +15,7 @@ class CliLogger extends AbstractLogger
      *
      * @return void
      */
-    public function log($level, $message, array $context = array())
+    public function log($level, $message, array $context = [])
     {
         echo date('m.d H:i:s') . " [$level] $message\n";
     }

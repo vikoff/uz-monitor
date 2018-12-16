@@ -5,14 +5,14 @@ namespace app\components\log;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 
-trait OptionalLoggerTrait
+trait LoggerOptionalTrait
 {
     /**
      * @var LoggerInterface|null
      */
     private $logger;
 
-    public function setLoggerOptional(LoggerInterface $logger)
+    protected function setLoggerOptional(LoggerInterface $logger)
     {
         $this->logger = $logger;
         return $this;
@@ -21,7 +21,7 @@ trait OptionalLoggerTrait
     /**
      * @return LoggerInterface
      */
-    public function getLogger()
+    protected function getLogger()
     {
         if ($this->logger === null) {
             $this->logger = new NullLogger();
